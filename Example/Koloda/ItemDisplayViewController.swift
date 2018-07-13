@@ -51,10 +51,16 @@ extension ItemDisplayViewController: UITableViewDelegate, UITableViewDataSource 
         return indexes.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        cell.textLabel?.text = "Socks"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! CustomCell
         let index = indexes[indexPath.row]
-        cell.detailTextLabel?.text = (displaydictionary[index].value(forKey: "price") as! String)
+        let url = URL(string: displaydictionary[index].value(forKey: "url") as! String)
+//
+        let data = try? Data(contentsOf: url!)
+//        cell.cost = (displaydictionary[index].value(forKey: "price") as! String)
+//        cell.seturl = displaydictionary[index].value(forKey: "url") as! String
+        cell.imageDisplay.image = UIImage(data: data!)
+//            UIImageView(image: UIImage(data: data!))
+        cell.priceLabel?.text = (displaydictionary[index].value(forKey: "price") as! String)
 
         return cell
     }
