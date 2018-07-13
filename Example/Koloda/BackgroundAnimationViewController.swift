@@ -30,11 +30,27 @@ class BackgroundAnimationViewController: UIViewController {
         kolodaView.delegate = self
         kolodaView.dataSource = self
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
-        
+        apiCall()
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
     }
     
-    
+    func apiCall(){
+        let url = URL(string: "https://openapi.etsy.com/v2/listings/active?includes=Images&api_key=samo6t9x98x9t58q0v2vcjhm")
+        let session = URLSession.shared
+        let task = session.dataTask(with: url!, completionHandler: {
+            data, response, error in
+            do {
+                print("getting data..")
+                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary {
+                    print(jsonResult)
+                }
+            } catch {
+                print("++++++")
+                print(error)
+            }
+        })
+        task.resume()
+    }
     //MARK: IBActions
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(.left)
@@ -101,7 +117,12 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
 //        print(index)
         image_present = index
+//        let url = URL(string: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg")
+//        let data = try? Data(contentsOf: url!)
+//        return UIImageView(image: UIImage(data: data!))
         return UIImageView(image: UIImage(named: "cards_\(index + 1)"))
+        
+        
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
