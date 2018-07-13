@@ -66,6 +66,8 @@ extension ViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
     }
+    
+    
 
 }
 

@@ -42,9 +42,6 @@ class BackgroundAnimationViewController: UIViewController {
     
     @IBAction func rightButtonTapped() {
         kolodaView?.swipe(.right)
-        favorited_items.append(image_present)
-        print(image_present)
-
     }
     
     @IBAction func undoButtonTapped() {
@@ -61,6 +58,13 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         UIApplication.shared.openURL(URL(string: "h     ")!)
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction.rawValue == "right" {
+            favorited_items.append(image_present)
+            print(image_present)
+        }
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
