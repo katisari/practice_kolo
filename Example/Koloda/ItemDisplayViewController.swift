@@ -9,6 +9,8 @@
 import UIKit
 
 class ItemDisplayViewController: UIViewController {
+    var indexes: [Int] = []
+    var displaydictionary: [NSDictionary] = []
     var price = ["9.99", "20.99", "14.99", "15.99", "9.99"]
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -46,12 +48,14 @@ class ItemDisplayViewController: UIViewController {
 
 extension ItemDisplayViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return indexes.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         cell.textLabel?.text = "Socks"
-        cell.detailTextLabel?.text = price[indexPath.row]
+        let index = indexes[indexPath.row]
+        cell.detailTextLabel?.text = (displaydictionary[index].value(forKey: "price") as! String)
+
         return cell
     }
     

@@ -98,6 +98,12 @@ class BackgroundAnimationViewController: UIViewController {
     @IBAction func undoButtonTapped() {
         kolodaView?.revertAction()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as! UINavigationController
+        let dest = nav.topViewController as! ItemDisplayViewController
+        dest.indexes = favorited_items
+        dest.displaydictionary = item_dict
+    }
 }
 
 //MARK: KolodaViewDelegate
