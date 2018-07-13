@@ -26,9 +26,7 @@ class ItemDisplayViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func buyButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+    
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

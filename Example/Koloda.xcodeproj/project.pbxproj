@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		191D14781525C400D3E86FEC /* Pods_Koloda_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5243B3EDBF06248559332C86 /* Pods_Koloda_Example.framework */; };
+		35095CC620F965E600C47773 /* yousmart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35095CC520F965E600C47773 /* yousmart.jpg */; };
 		355A303620F93382006F687B /* LaunchScreend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355A303520F93382006F687B /* LaunchScreend.xib */; };
 		355E3A9320F95506008C1EF6 /* ItemDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3A9220F95506008C1EF6 /* ItemDisplayViewController.swift */; };
 		355E3A9520F955C9008C1EF6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3A9420F955C9008C1EF6 /* CustomCell.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		093C6CC368001B8BAFD235CB /* Pods-Koloda_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1242FA2632AFB60821C100AF /* Pods-Koloda_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Tests/Pods-Koloda_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		35095CC520F965E600C47773 /* yousmart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yousmart.jpg; sourceTree = "<group>"; };
 		355A303520F93382006F687B /* LaunchScreend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreend.xib; sourceTree = "<group>"; };
 		355E3A9220F95506008C1EF6 /* ItemDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDisplayViewController.swift; sourceTree = "<group>"; };
 		355E3A9420F955C9008C1EF6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				4420661E1B4457E800FD4CAD /* ExampleOverlayView.swift */,
 				440FB7661B51499A009FC9FC /* CustomKolodaView.swift */,
 				44B5EC281B660C8500895E3D /* CustomOverlayView.swift */,
+				35095CC520F965E600C47773 /* yousmart.jpg */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				355E3A9420F955C9008C1EF6 /* CustomCell.swift */,
 				355E3A9220F95506008C1EF6 /* ItemDisplayViewController.swift */,
@@ -210,6 +213,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4420661D1B44577500FD4CAD /* OverlayView.xib in Resources */,
 				44B5EC2B1B660C9100895E3D /* CustomOverlayView.xib in Resources */,
+				35095CC620F965E600C47773 /* yousmart.jpg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				355A303620F93382006F687B /* LaunchScreend.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
