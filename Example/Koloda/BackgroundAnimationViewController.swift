@@ -15,6 +15,8 @@ private let frameAnimationSpringBounciness: CGFloat = 9
 private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0.1
+var image_present = 1
+var favorited_items: [Int] = []
 
 class BackgroundAnimationViewController: UIViewController {
 
@@ -40,6 +42,9 @@ class BackgroundAnimationViewController: UIViewController {
     
     @IBAction func rightButtonTapped() {
         kolodaView?.swipe(.right)
+        favorited_items.append(image_present)
+        print(image_present)
+
     }
     
     @IBAction func undoButtonTapped() {
@@ -55,7 +60,7 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+        UIApplication.shared.openURL(URL(string: "h     ")!)
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
@@ -90,6 +95,8 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+//        print(index)
+        image_present = index
         return UIImageView(image: UIImage(named: "cards_\(index + 1)"))
     }
     
